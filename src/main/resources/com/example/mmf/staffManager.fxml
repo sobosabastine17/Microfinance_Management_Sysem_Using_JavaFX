@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane onMouseDragged="#MouseDrag" onMousePressed="#mousePress" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mmf.controller">
+   <children>
+      <HBox alignment="TOP_RIGHT" prefHeight="30.0" prefWidth="1050.0">
+         <children>
+            <Button id="btnClose" minWidth="33.0" mnemonicParsing="false" onAction="#closeWindow" prefHeight="37.0" prefWidth="59.0" stylesheets="@myStyle.css" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <FontAwesomeIcon fill="WHITE" iconName="CLOSE" size="1.5em" tabSize="10">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </FontAwesomeIcon>
+               </graphic>
+               <tooltip>
+                  <Tooltip text="CLOSE" />
+               </tooltip>
+            </Button>
+         </children>
+      </HBox>
+      <Pane fx:id="hbCenterPaneManageStaff" layoutX="20.0" layoutY="20.0" prefHeight="550.0" prefWidth="1000.0">
+         <children>
+            <VBox prefHeight="550.0">
+               <children>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="MANAGE STAFF" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="32.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="350.0" />
+                           </HBox.margin>
+                        </Text>
+                     </children>
+                  </HBox>
+                  <VBox prefHeight="550.0" prefWidth="1000.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="60.0" prefWidth="1000.0">
+                           <children>
+                              <Button mnemonicParsing="false">
+                                 <graphic>
+                                    <FontAwesomeIcon fill="#428bb5" iconName="EDIT" size="2.5em" />
+                                 </graphic>
+                                 <tooltip>
+                                    <Tooltip text="EDIT DATA" />
+                                 </tooltip>
+                              </Button>
+                              <Button mnemonicParsing="false">
+                                 <graphic>
+                                    <FontAwesomeIcon fill="#0feb6b" iconName="REFRESH" size="2.5em" />
+                                 </graphic>
+                                 <HBox.margin>
+                                    <Insets right="50.0" />
+                                 </HBox.margin>
+                                 <tooltip>
+                                    <Tooltip text="REFRESH LIST" />
+                                 </tooltip>
+                              </Button>
+                              <FontAwesomeIcon iconName="SEARCH" size="1.5em">
+                                 <HBox.margin>
+                                    <Insets left="50.0" />
+                                 </HBox.margin>
+                              </FontAwesomeIcon>
+                              <TextField prefHeight="25.0" prefWidth="255.0" promptText="SEARCH STAFF HERE" />
+                           </children>
+                        </HBox>
+                        <VBox prefHeight="550.0" prefWidth="2000.0">
+                           <children>
+                              <ScrollPane prefHeight="550.0">
+                                 <content>
+                                    <TableView prefHeight="550.0">
+                                       <columns>
+                                          <TableColumn prefWidth="75.0" text="ID" />
+                                          <TableColumn prefWidth="158.0" text="PROFILE" />
+                                          <TableColumn prefWidth="158.0" text="FIRST NAME" />
+                                          <TableColumn prefWidth="158.0" text="SECOND NAME" />
+                                          <TableColumn prefWidth="158.0" text="PLACE OF BIRTH" />
+                                          <TableColumn prefWidth="158.0" text="HOME TOWN" />
+                                          <TableColumn prefWidth="158.0" text="DATE OF BIRTH" />
+                                          <TableColumn prefWidth="158.0" text="PHONE NUMBER" />
+                                          <TableColumn prefWidth="158.0" text="EMAIL" />
+                                          <TableColumn prefWidth="158.0" text="HOUSE ADDRESS" />
+                                          <TableColumn prefWidth="158.0" text="DIGITAL ADDRESS" />
+                                          <TableColumn prefWidth="158.0" text="POSITION" />
+                                          <TableColumn prefWidth="158.0" text="PASSWORD" />
+                                          <TableColumn prefWidth="158.0" text="STATUS" />
+                                          <TableColumn prefWidth="158.0" text="GUARANTOR 1 NAME" />
+                                          <TableColumn prefWidth="158.0" text="RELATIONSHIP" />
+                                          <TableColumn prefWidth="158.0" text="ADDRESS" />
+                                          <TableColumn prefWidth="158.0" text="PHONE NUMBER" />
+                                          <TableColumn prefWidth="158.0" text="GUARANTOR 2 NAME" />
+                                          <TableColumn prefWidth="158.0" text="RELATIONSHIP" />
+                                          <TableColumn prefWidth="158.0" text="ADDRESS" />
+                                          <TableColumn prefWidth="158.0" text="PHONE NUMBER" />
+                                       </columns>
+                                    </TableView>
+                                 </content>
+                              </ScrollPane>
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

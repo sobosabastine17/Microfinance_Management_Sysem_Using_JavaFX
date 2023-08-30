@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane onMouseDragged="#MouseDrag" onMousePressed="#mousePress" prefHeight="400.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mmf.controller">
+   <children>
+      <HBox alignment="TOP_RIGHT" prefHeight="30.0" prefWidth="900.0">
+         <children>
+            <Button id="btnClose" minWidth="33.0" mnemonicParsing="false" onAction="#closeWindow" prefHeight="37.0" prefWidth="59.0" stylesheets="@myStyle.css" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <FontAwesomeIcon fill="WHITE" iconName="CLOSE" size="1.5em" tabSize="10">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </FontAwesomeIcon>
+               </graphic>
+               <tooltip>
+                  <Tooltip text="CLOSE" />
+               </tooltip>
+            </Button>
+         </children>
+      </HBox>
+      <Pane fx:id="hbCenterPaneNotification" layoutX="20.0" layoutY="20.0" prefHeight="550.0" prefWidth="900.0">
+         <children>
+            <VBox prefHeight="550.0" prefWidth="900.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="45.0" prefWidth="900.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Notifications">
+                           <font>
+                              <Font name="System Bold" size="27.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Text>
+                        <FontAwesomeIcon iconName="SEARCH" selectionEnd="0" size="1.5em" strokeLineCap="ROUND" strokeType="INSIDE" wrappingWidth="16.714284896850586" HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets left="50.0" />
+                           </HBox.margin>
+                        </FontAwesomeIcon>
+                        <TextField alignment="BOTTOM_LEFT" prefHeight="25.0" prefWidth="209.0" promptText="SEARCH HERE">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </TextField>
+                        <Button mnemonicParsing="false">
+                           <graphic>
+                              <FontAwesomeIcon fill="#0ca409" iconName="CHECK" size="2em" />
+                           </graphic>
+                           <HBox.margin>
+                              <Insets left="40.0" />
+                           </HBox.margin>
+                           <tooltip>
+                              <Tooltip text="READ NOTICE" />
+                           </tooltip>
+                        </Button>
+                        <Button mnemonicParsing="false">
+                           <graphic>
+                              <FontAwesomeIcon fill="#da2a2a" iconName="CLOSE" size="2em" />
+                           </graphic>
+                           <HBox.margin>
+                              <Insets right="300.0" />
+                           </HBox.margin>
+                           <tooltip>
+                              <Tooltip text="DELETE NOTICCE" />
+                           </tooltip>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <VBox prefHeight="400.0" prefWidth="900.0">
+                     <children>
+                        <ScrollPane prefHeight="600.0" prefWidth="800.0">
+                           <content>
+                              <TableView prefHeight="600.0" prefWidth="900.0">
+                                 <columns>
+                                    <TableColumn prefWidth="75.0" text="No" />
+                                    <TableColumn prefWidth="292.0" text="DATE" />
+                                    <TableColumn prefWidth="434.0" text="TITLE" />
+                                 </columns>
+                              </TableView>
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </VBox>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="MESSAGE" textAlignment="CENTER">
+                     <VBox.margin>
+                        <Insets top="50.0" />
+                     </VBox.margin>
+                  </Text>
+               </children>
+            </VBox>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

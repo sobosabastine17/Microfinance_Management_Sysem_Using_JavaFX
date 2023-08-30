@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="addCustomerArchor" onMouseDragged="#MouseDrag" onMousePressed="#mousePress" prefHeight="550.0" prefWidth="600.0" stylesheets="@myStyle.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mmf.controller">
+   <children>
+      <HBox alignment="TOP_RIGHT" prefHeight="20.0" prefWidth="1020.0">
+         <children>
+            <Button id="btnClose" minWidth="33.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#closeWindow" prefHeight="36.0" stylesheets="@myStyle.css" textFill="#5b17c3">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <FontAwesomeIcon fill="WHITE" iconName="CLOSE" tabSize="10">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </FontAwesomeIcon>
+               </graphic>
+               <tooltip>
+                  <Tooltip text="CLOSE" />
+               </tooltip>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+      <Pane fx:id="hbCenterPaneManageCustomer" layoutX="30.0" layoutY="30.0" prefHeight="550.0" prefWidth="1000.0">
+         <children>
+            <ScrollPane prefHeight="550.0" prefWidth="1000.0">
+               <content>
+                  <VBox prefHeight="800.0">
+                     <children>
+                        <VBox prefHeight="100.0" prefWidth="100.0">
+                           <children>
+                              <HBox id="addCustomerHBox" alignment="CENTER" prefHeight="150.0" prefWidth="200.0" stylesheets="@myStyle.css">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ADD CUSTOMER" textAlignment="CENTER">
+                                       <font>
+                                          <Font name="System Bold" size="32.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </Text>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <HBox prefHeight="39.0" prefWidth="361.0">
+                                       <children>
+                                          <TextField fx:id="txtGenerateAccNumber" disable="true" prefHeight="39.0" prefWidth="221.0" promptText="0000000000000">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </TextField>
+                                          <Button fx:id="btnGenerateAccNumber" mnemonicParsing="false" onAction="#generateAccNumber" prefHeight="39.0" prefWidth="142.0" text="Generate Acc Num." />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="39.0" prefWidth="361.0">
+                                       <children>
+                                          <Label contentDisplay="CENTER" prefHeight="21.0" prefWidth="118.0" text="SET ACC BALANCE : ">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="txtAccBalance" prefHeight="39.0" prefWidth="136.0" promptText="0000000000000">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </TextField>
+                                       </children>
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                       <padding>
+                                          <Insets left="10.0" />
+                                       </padding>
+                                    </HBox>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <HBox prefHeight="100.0" prefWidth="1010.0">
+                           <children>
+                              <VBox prefHeight="407.0" prefWidth="800.0">
+                                 <children>
+                                    <HBox alignment="CENTER" prefHeight="30.0" prefWidth="800.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="First Name" wrappingWidth="113.13671875">
+                                             <font>
+                                                <Font size="23.0" />
+                                             </font>
+                                          </Text>
+                                          <TextField fx:id="txtFName" prefHeight="25.0" prefWidth="282.0" />
+                                          <ImageView fitHeight="24.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                             <HBox.margin>
+                                                <Insets right="5.0" />
+                                             </HBox.margin>
+                                             <image>
+                                                <Image url="@../../../images/icons8-close-100.png" />
+                                             </image>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </ImageView>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Surname" wrappingWidth="94.13671875">
+                                             <font>
+                                                <Font size="23.0" />
+                                             </font>
+                                          </Text>
+                                          <TextField fx:id="txtLName" prefHeight="25.0" prefWidth="289.0" />
+                                          <ImageView fitHeight="24.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../images/icons8-close-100.png" />
+                                             </image>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </ImageView>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets top="15.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="30.0" prefWidth="800.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nationaity" wrappingWidth="113.13671875">
+                                             <font>
+                                                <Font size="23.0" />
+                                             </font>
+                                          </Text>
+                                          <TextField fx:id="txtNationality" prefHeight="25.0" prefWidth="518.0" />
+                                          <ImageView fitHeight="24.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../images/icons8-close-100.png" />
+                                             </image>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </ImageView>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets top="15.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="30.0" prefWidth="800.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Place of birth" wrappingWidth="137.13671875">
+                                             <font>
+                                                <Font size="23.0" />
+                                             </font>
+                                          </Text>
+                                          <TextField fx:id="txtPlaceOfBirth" prefHeight="25.0" prefWidth="282.0" />
+                                          <ImageView fitHeight="24.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../images/icons8-close-100.png" />
+                                             </image>
+                                             <HBox.margin>
+                                                <Insets right="5.0" />
+                                             </HBox.margin>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </ImageView>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Home town" wrappingWidth="123.13671875">
+                                             <font>
+                                                <Font size="23.0" />
+                                             </font>
+                                          </Text>
+                                          <TextField fx:id="txtHomeTown" prefHeight="25.0" prefWidth="223.0" />
+                                          <ImageView fitHeight="24.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../images/icons8-close-100.png" />
+                                             </image>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </ImageView>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets top="15.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="30.0" prefWidth="800.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Date of birth" wrappingWidth="134.13671875">
+                                             <font>
+                                                <Font size="23.0" />
+                                             </font>
+                                          </Text>
+                                          <DatePicker fx:id="dateOfBirth" prefHeight="25.0" prefWidth="187.0" promptText="Set yor date of birth here" />
+                                          <ImageView fitHeight="24.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../images/icons8-close-100.png" />
+                                             </image>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </ImageView>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets top="15.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="30.0" prefWidth="800.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ID type" wrappingWidth="78.13671875">
+                                             <font>
+                                                <Font size="23.0" />
+                                             </font>
+                                          </Text>
+                                          <ComboBox fx:id="cmbIDType" prefHeight="25.0" prefWidth="253.0" promptText="Select your ID" />
+                                          <ImageView fitHeight="24.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../images/icons8-close-100.png" />
+                                             </image>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                             <HBox.margin>
+                                                <Insets right="5.0" />
+                                             </HBox.margin>
+                                          </ImageView>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ID number" wrappingWidth="113.13671875">
+                                             <font>
+                                                <Font size="23.0" />
+                                             </font>
+                                          </Text>
+                                          <TextField fx:id="txtIDNumber" prefHeight="25.0" prefWidth="271.0" />
+                                          <ImageView fitHeight="24.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../images/icons8-close-100.png" />
+                                             </image>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </ImageView>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets top="15.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="30.0" prefWidth="800.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Phone number" wrappingWidth="162.13671875">
+                                             <font>
+                                                <Font size="23.0" />
+                                             </font>
+                                          </Text>
+                                          <TextField fx:id="txtPhoneNumber" prefHeight="25.0" prefWidth="282.0" />
+                                          <ImageView fitHeight="24.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../images/icons8-close-100.png" />
+                                             </image>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                             <HBox.margin>
+                                                <Insets right="5.0" />
+                                             </HBox.margin>
+                                          </ImageView>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Email" wrappingWidth="61.13671875">
+                                             <font>
+                                                <Font size="23.0" />
+                                             </font>
+                                          </Text>
+                                          <TextField fx:id="txtEmail" prefHeight="25.0" prefWidth="278.0" />
+                                          <ImageView fitHeight="24.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../images/icons8-close-100.png" />
+                                             </image>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </ImageView>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets top="15.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="30.0" prefWidth="800.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="House Address" wrappingWidth="162.13671875">
+                                             <font>
+                                                <Font size="23.0" />
+                                             </font>
+                                          </Text>
+                                          <TextField fx:id="txtHouseAddress" prefHeight="25.0" prefWidth="255.0" />
+                                          <ImageView fitHeight="24.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../images/icons8-close-100.png" />
+                                             </image>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                             <HBox.margin>
+                                                <Insets right="5.0" />
+                                             </HBox.margin>
+                                          </ImageView>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Digital Address" wrappingWidth="156.13671875">
+                                             <font>
+                                                <Font size="23.0" />
+                                             </font>
+                                             <effect>
+                                                <Bloom />
+                                             </effect>
+                                          </Text>
+                                          <TextField fx:id="txtDigitalAddress" prefHeight="25.0" prefWidth="215.0" />
+                                          <ImageView fitHeight="24.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../images/icons8-close-100.png" />
+                                             </image>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </ImageView>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets top="15.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="30.0" prefWidth="800.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Account type" wrappingWidth="139.13671875">
+                                             <font>
+                                                <Font size="23.0" />
+                                             </font>
+                                          </Text>
+                                          <ComboBox fx:id="cmbAccountType" prefHeight="25.0" prefWidth="268.0" promptText="Select Account type" />
+                                          <ImageView fitHeight="24.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../images/icons8-close-100.png" />
+                                             </image>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                             <HBox.margin>
+                                                <Insets right="5.0" />
+                                             </HBox.margin>
+                                          </ImageView>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Account No" wrappingWidth="122.47003173828125">
+                                             <font>
+                                                <Font size="23.0" />
+                                             </font>
+                                          </Text>
+                                          <TextField fx:id="txtAccountNumber" disable="true" prefHeight="25.0" prefWidth="271.0" />
+                                          <ImageView fitHeight="24.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../images/icons8-close-100.png" />
+                                             </image>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </ImageView>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets top="15.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="30.0" prefWidth="800.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Education level" wrappingWidth="158.13671875">
+                                             <font>
+                                                <Font size="23.0" />
+                                             </font>
+                                          </Text>
+                                          <ComboBox fx:id="cmbEducationLevel" prefHeight="25.0" prefWidth="253.0" promptText="Choose the education here" />
+                                          <ImageView fitHeight="24.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../images/icons8-close-100.png" />
+                                             </image>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                             <HBox.margin>
+                                                <Insets right="5.0" />
+                                             </HBox.margin>
+                                          </ImageView>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Profession" wrappingWidth="113.13671875">
+                                             <font>
+                                                <Font size="23.0" />
+                                             </font>
+                                          </Text>
+                                          <TextField fx:id="txtProfession" prefHeight="25.0" prefWidth="271.0" />
+                                          <ImageView fitHeight="24.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../images/icons8-close-100.png" />
+                                             </image>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </ImageView>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets top="15.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="30.0" prefWidth="800.0">
+                                       <children>
+                                          <Button id="btnRegisterCustomer" fx:id="btnRegisterCustomer" mnemonicParsing="false" onAction="#btnRegisterCustomer" prefHeight="25.0" prefWidth="263.0" stylesheets="@myStyle.css" text="Register Customer" textFill="WHITE">
+                                             <font>
+                                                <Font size="24.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets right="50.0" />
+                                             </HBox.margin>
+                                             <tooltip>
+                                                <Tooltip text="Click To Register" />
+                                             </tooltip>
+                                          </Button>
+                                          <ImageView fitHeight="61.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../images/refresh.png" />
+                                             </image>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </ImageView>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets top="15.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="250.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Profile Picture" />
+                                    <ImageView fx:id="imgProfile" fitHeight="225.0" fitWidth="251.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../images/img.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Button id="btnUploadImg" fx:id="btnUploadImage" mnemonicParsing="false" stylesheets="@myStyle.css" text="Upload image" textFill="WHITE">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Button>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </content>
+            </ScrollPane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

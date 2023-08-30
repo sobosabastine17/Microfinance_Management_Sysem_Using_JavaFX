@@ -1,0 +1,76 @@
+#vbLeft,#customerPane,#editCustomerPane{
+	-fx-background-color:#80bfff;
+}
+#hbCenterTop{
+-fx-background-color:#80bfff;
+}
+#hbCenterButtom{
+   -fx-background-color:#80bfff;
+}
+#hbCenterArchorPane{
+    -fx-background-color:#ffffff;
+}
+#btnRegisterCustomer,#btnUploadImg{
+    -fx-background-color:#80bfff;
+}
+#LoginMainContainer{
+	-fx-background-color:#000099;
+}
+
+#fontLlb{
+      -fx-background-color:#ffffff;
+}
+#btnLogin{
+  -fx-background-color:#000000;
+  -fx-border-style: solid;
+   -fx-border-color: #ffffff;
+   -fx-border-radius:15px;
+}
+#btnLogin:hover{
+    -fx-background-color:#80bfff;
+}
+.forms{
+  -fx-border-radius:15px;
+}
+#btnClose,#editClose{
+-fx-background-color:red;
+-fx-color:white;
+}
+#btnClose:hover{
+-fx-font-size:15px;
+-fx-font-color:white;
+}
+#btnNavigator:hover{
+-fx-background-color:#000099;
+-fx-font-size:15px;
+}
+#subArchorPane,#editCustomerAcrhor{
+-fx-background-color:#000099;
+}
+#tblColumns{
+-fx-alignment:center;
+}
+#btnUpdate{
+-fx-background-color:#ddff99;
+}
+#btnUpdate:hover{
+-fx-background-color:#00e64d;
+}
+#btnDeleteCustomer{
+-fx-background-color:#ffb3b3;
+}
+#btnDeleteCustomer:hover{
+-fx-background-color:#cc0000;
+}
+#customerCountVB{
+-fx-background-color:#ffffff;
+}
+#btnNavIcons:hover{
+-fx-background-color:#7a7a52;
+}
+#addCustomerArchor{
+-fx-background-color:#000066;
+}
+#addCustomerHBox{
+  -fx-background-color:#80bfff;
+}

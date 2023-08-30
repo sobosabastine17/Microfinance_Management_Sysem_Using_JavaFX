@@ -1,0 +1,591 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane onMouseDragged="#MouseDrag" onMousePressed="#mousePress" prefWidth="1000.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mmf.controller">
+   <left>
+      <VBox id="vbLeft" fx:id="vbLeft" prefHeight="400.0" prefWidth="147.0" stylesheets="@myStyle.css" BorderPane.alignment="CENTER">
+         <children>
+            <Text fill="#f8f7f7" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome" wrappingWidth="144.13671875">
+               <font>
+                  <Font size="29.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="50.0" />
+               </VBox.margin>
+            </Text>
+            <HBox alignment="CENTER" prefHeight="38.0" prefWidth="147.0">
+               <children>
+                  <Button id="btnNavigator" fx:id="btnDashboard" mnemonicParsing="false" prefHeight="44.0" prefWidth="148.0" stylesheets="@myStyle.css" text="Dashboard" textFill="WHITE">
+                     <graphic>
+                        <ImageView fx:id="imgDashboard" fitHeight="39.0" fitWidth="48.0" onMouseClicked="#homeNavigation" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/login.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Button>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="38.0" prefWidth="147.0">
+               <children>
+                  <Button id="btnNavigator" fx:id="btnAddCustomer" mnemonicParsing="false" onAction="#homeNavigation" prefHeight="44.0" prefWidth="152.0" stylesheets="@myStyle.css" text="Add Customer" textFill="WHITE">
+                     <graphic>
+                        <ImageView fx:id="imgAddCustomer" fitHeight="39.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/user.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="38.0" prefWidth="147.0">
+               <children>
+                  <Button id="btnNavigator" fx:id="btnCustomers" mnemonicParsing="false" onAction="#homeNavigation" prefHeight="46.0" prefWidth="148.0" stylesheets="@myStyle.css" text="Customers" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fx:id="imgManageCustomer" fitHeight="39.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/customers.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="38.0" prefWidth="147.0">
+               <children>
+                  <Button id="btnNavigator" fx:id="btnAddStaff" mnemonicParsing="false" onAction="#homeNavigation" prefHeight="44.0" prefWidth="150.0" stylesheets="@myStyle.css" text="Add Staff" textFill="WHITE">
+                     <graphic>
+                        <ImageView fx:id="imgAddStaff" fitHeight="39.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/staff.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="38.0" prefWidth="147.0">
+               <children>
+                  <Button id="btnNavigator" fx:id="btnStaff" mnemonicParsing="false" onAction="#homeNavigation" prefHeight="44.0" prefWidth="148.0" stylesheets="@myStyle.css" text="Staffs" textFill="WHITE">
+                     <graphic>
+                        <ImageView fx:id="imgManageStaff" fitHeight="39.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/staffs.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="38.0" prefWidth="147.0">
+               <children>
+                  <Button id="btnNavigator" fx:id="btnNotification" mnemonicParsing="false" onAction="#homeNavigation" prefHeight="44.0" prefWidth="149.0" stylesheets="@myStyle.css" text="Notification" textFill="WHITE">
+                     <graphic>
+                        <ImageView fx:id="imgNotification" fitHeight="39.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/notification.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <VBox BorderPane.alignment="CENTER">
+         <children>
+            <HBox id="hbCenterTop" fx:id="hbCenterTop" prefHeight="33.0" prefWidth="545.0" stylesheets="@myStyle.css">
+               <children>
+                  <VBox prefHeight="56.0" prefWidth="40.0">
+                     <children>
+                        <ImageView fitHeight="37.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/toggler.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </VBox>
+                  <HBox alignment="CENTER">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <children>
+                        <ImageView fitHeight="39.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                           <HBox.margin>
+                              <Insets left="950.0" />
+                           </HBox.margin>
+                           <image>
+                              <Image url="@../../../images/profile.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                        <Text fill="#fcfcfc" strokeType="OUTSIDE" strokeWidth="0.0" text="Hi Admin" wrappingWidth="66.13671875" />
+                        <ImageView cache="true" fitHeight="39.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/icons8-settings-100-2.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                        <Button fx:id="btnLogout" mnemonicParsing="false" onAction="#logout">
+                           <graphic>
+                              <FontAwesomeIcon fill="#fcf5f5" iconName="SIGN_OUT" size="2.5em" />
+                           </graphic>
+                           <tooltip>
+                              <Tooltip text="LOGOUT" />
+                           </tooltip>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="28.0" prefWidth="545.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Monday 23 May, 2022" wrappingWidth="514.6826171875">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="400.0" />
+                     </HBox.margin>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Refresh">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Text>
+                  <ImageView fitHeight="30.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/refresh.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets right="250.0" />
+                     </HBox.margin>
+                  </ImageView>
+               </children></HBox>
+            <HBox id="hbCenterButtom" fx:id="hbCenterButtom" prefHeight="560.0" prefWidth="1062.0" stylesheets="@myStyle.css">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="550.0" stroke="BLACK" strokeType="INSIDE" width="5.0" />
+                  <AnchorPane id="hbCenterArchorPane" fx:id="hbCenterArchorPane" prefHeight="550.0" prefWidth="700.0" stylesheets="@myStyle.css">
+                     <children>
+                        <Pane fx:id="hbCenterPaneDashboard" layoutX="10.0" layoutY="10.0" prefHeight="550.0" prefWidth="1000.0">
+                           <children>
+                              <VBox prefHeight="550.0" prefWidth="1000.0">
+                                 <children>
+                                    <HBox prefHeight="127.0" prefWidth="1000.0">
+                                       <children>
+                                          <VBox alignment="CENTER" prefHeight="144.0" prefWidth="129.0">
+                                             <children>
+                                                <ImageView fitHeight="102.0" fitWidth="128.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../../../images/pay_money.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="0" wrappingWidth="63.6328125">
+                                                   <font>
+                                                      <Font size="29.0" />
+                                                   </font>
+                                                </Text>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Mark Today">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Text>
+                                             </children>
+                                             <HBox.margin>
+                                                <Insets right="50.0" />
+                                             </HBox.margin>
+                                          </VBox>
+                                          <VBox alignment="CENTER" prefHeight="144.0" prefWidth="129.0">
+                                             <children>
+                                                <ImageView fitHeight="102.0" fitWidth="128.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../../../images/icons8-coins-100.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="0.00" wrappingWidth="79.6328125">
+                                                   <font>
+                                                      <Font size="29.0" />
+                                                   </font>
+                                                </Text>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Today Revenue">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Text>
+                                             </children>
+                                             <HBox.margin>
+                                                <Insets right="50.0" />
+                                             </HBox.margin>
+                                          </VBox>
+                                          <VBox alignment="CENTER" prefHeight="144.0" prefWidth="129.0">
+                                             <children>
+                                                <ImageView fitHeight="102.0" fitWidth="128.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../../../images/customers.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="0" wrappingWidth="74.6328125">
+                                                   <font>
+                                                      <Font size="29.0" />
+                                                   </font>
+                                                </Text>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Active Customers">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Text>
+                                             </children>
+                                             <HBox.margin>
+                                                <Insets right="50.0" />
+                                             </HBox.margin>
+                                          </VBox>
+                                          <VBox alignment="CENTER" prefHeight="144.0" prefWidth="129.0">
+                                             <children>
+                                                <ImageView fitHeight="102.0" fitWidth="128.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../../../images/new.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="0" wrappingWidth="62.6328125">
+                                                   <font>
+                                                      <Font size="29.0" />
+                                                   </font>
+                                                </Text>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Pending Customers">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Text>
+                                             </children>
+                                             <HBox.margin>
+                                                <Insets right="50.0" />
+                                             </HBox.margin>
+                                          </VBox>
+                                          <VBox alignment="CENTER" prefHeight="144.0" prefWidth="129.0">
+                                             <children>
+                                                <ImageView fitHeight="102.0" fitWidth="128.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../../../images/info_verify.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="0" wrappingWidth="61.6328125">
+                                                   <font>
+                                                      <Font size="29.0" />
+                                                   </font>
+                                                </Text>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Active Agents">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Text>
+                                             </children>
+                                             <HBox.margin>
+                                                <Insets right="50.0" />
+                                             </HBox.margin>
+                                          </VBox>
+                                          <VBox alignment="CENTER" prefHeight="144.0" prefWidth="129.0">
+                                             <children>
+                                                <ImageView fitHeight="102.0" fitWidth="128.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../../../images/icons8-group-message-100.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="0" wrappingWidth="63.6328125">
+                                                   <font>
+                                                      <Font size="29.0" />
+                                                   </font>
+                                                </Text>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Messages">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Text>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="500.0">
+                                       <children>
+                                          <BarChart prefHeight="50.0" prefWidth="400.0">
+                                            <xAxis>
+                                              <CategoryAxis side="BOTTOM" />
+                                            </xAxis>
+                                            <yAxis>
+                                              <NumberAxis side="LEFT" />
+                                            </yAxis>
+                                          </BarChart>
+                                          <ScrollPane prefHeight="400.0" prefWidth="400.0">
+                                             <content>
+                                                <TableView prefHeight="400.0" prefWidth="400.0">
+                                                  <columns>
+                                                    <TableColumn prefWidth="166.0" text="Agent Name" />
+                                                    <TableColumn prefWidth="107.0" text="No Of Customers" />
+                                                      <TableColumn prefWidth="126.0" text="Place Of Work" />
+                                                  </columns>
+                                                </TableView>
+                                             </content>
+                                          </ScrollPane>
+                                          <ScrollPane prefHeight="200.0" prefWidth="200.0">
+                                             <content>
+                                                <TableView prefHeight="400.0" prefWidth="200.0">
+                                                  <columns>
+                                                    <TableColumn prefWidth="113.0" text="Customer Name" />
+                                                    <TableColumn prefWidth="86.0" text="Revenue" />
+                                                  </columns>
+                                                </TableView>
+                                             </content>
+                                          </ScrollPane>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets top="30.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children></Pane>
+                     </children>
+                  </AnchorPane>
+                  <VBox prefHeight="200.0" prefWidth="210.0">
+                     <children>
+                        <ImageView fitHeight="219.0" fitWidth="220.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/icons8-save-100-2.png" />
+                           </image>
+                        </ImageView>
+                        <ScrollPane prefHeight="400.0" prefWidth="200.0">
+                           <content>
+                              <VBox prefHeight="400.0" prefWidth="200.0">
+                                 <children>
+                                    <Label prefHeight="37.0" prefWidth="133.0" text="Version: 1.0.10">
+                                       <graphic>
+                                          <ImageView fitHeight="37.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../images/icons8-scroll-down-100-4.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <VBox.margin>
+                                          <Insets top="5.0" />
+                                       </VBox.margin>
+                                       <font>
+                                          <Font size="11.0" />
+                                       </font>
+                                    </Label>
+                                    <Label prefHeight="37.0" prefWidth="234.0" text="Serial No: 465F5GH6GF5">
+                                       <graphic>
+                                          <ImageView fitHeight="37.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../images/icons8-access-100.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <VBox.margin>
+                                          <Insets top="5.0" />
+                                       </VBox.margin>
+                                       <font>
+                                          <Font size="11.0" />
+                                       </font>
+                                    </Label>
+                                    <Label prefHeight="37.0" prefWidth="234.0" text="Subscription Package: 1 Year">
+                                       <graphic>
+                                          <ImageView fitHeight="37.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../images/icons8-discount-100.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <VBox.margin>
+                                          <Insets top="5.0" />
+                                       </VBox.margin>
+                                       <font>
+                                          <Font size="11.0" />
+                                       </font>
+                                    </Label>
+                                    <Label prefHeight="37.0" prefWidth="234.0" text="Status: Active">
+                                       <graphic>
+                                          <ImageView fitHeight="37.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../images/info.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <VBox.margin>
+                                          <Insets top="5.0" />
+                                       </VBox.margin>
+                                       <font>
+                                          <Font size="11.0" />
+                                       </font>
+                                    </Label>
+                                    <Label prefHeight="37.0" prefWidth="234.0" text="Required Ram: 2GIG">
+                                       <graphic>
+                                          <ImageView fitHeight="37.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../images/icons8-save-all-100.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <VBox.margin>
+                                          <Insets top="5.0" />
+                                       </VBox.margin>
+                                       <font>
+                                          <Font size="11.0" />
+                                       </font>
+                                    </Label>
+                                    <Label prefHeight="37.0" prefWidth="234.0" text="OS: Windows/Linux">
+                                       <graphic>
+                                          <ImageView fitHeight="37.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../images/icons8-intelligence-100.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <VBox.margin>
+                                          <Insets top="5.0" />
+                                       </VBox.margin>
+                                       <font>
+                                          <Font size="11.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                           </content>
+                        </ScrollPane>
+                     </children></VBox>
+               </children>
+            </HBox>
+         </children></VBox>
+   </center>
+   <top>
+      <HBox prefHeight="13.0" prefWidth="692.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="1500.0">
+               <children>
+                  <ImageView fitHeight="37.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/login.png" />
+                     </image>
+                  </ImageView>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="My Micro Finance" />
+               </children>
+            </HBox>
+         </children></HBox>
+   </top>
+   <bottom>
+      <HBox prefHeight="20.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox prefHeight="32.0">
+               <children>
+                  <Text fill="#f23920" strokeType="OUTSIDE" strokeWidth="0.0" text="Powered By Techline Systems" wrappingWidth="268.13671875">
+                     <font>
+                        <Font name="System Bold" size="19.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="450.0" />
+                     </HBox.margin>
+                  </Text>
+                  <ImageView fitHeight="32.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/24hours.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+         </children>
+      </HBox>
+   </bottom>
+</BorderPane>
